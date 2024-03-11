@@ -39,6 +39,12 @@ We will only mint the reference token once, but it needs to be available to mint
 
 it is added as a reference input to the transactions
 
+We will need to fix a few things in these contracts
+
+e.g. We need to only allow album updates if the transaction is signed by the creator of the album
+
+this is not implemented yet
+
 ---
 
 ## To Do 
