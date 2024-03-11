@@ -1,55 +1,50 @@
 # soundrig
 
-Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.
+SoundRig CIP68 Album Contracts
 
-For example, as `validators/always_true.ak`
+---
 
-```gleam
-validator {
-  fn spend(_datum: Data, _redeemer: Data, _context: Data) -> Bool {
-    True
-  }
+## Draft State
+
+this is the initial state of the SoundRig Contracts
+
+currently the lucid code only mints and doesnt burn
+
+we dont charge for redeeming an album ( pending payment methods )
+
+we also dont charge for the creation of the album ( pending payment methods )
+
+## Metadata Structure
+
+until we are ready to test the metadata mechanism, I have reverted to the standard metadata structure for CIP-68
+
+```
+Datum {
+  metadata: {
+    name: ,
+    image: ,
+    mediaType: ,
+  },
+  version: 0,
 }
 ```
 
-## Building
+this will change when we start testing properly, but for the meantime it will enable us to continue working on the dapp
 
-```sh
-aiken build
-```
+---
 
-## Testing
+## IMPORTANT DETAILS
 
-You can write tests in any module using the `test` keyword. For example:
+We will only mint the reference token once, but it needs to be available to mint albums,
 
-```gleam
-test foo() {
-  1 + 1 == 2
-}
-```
+it is added as a reference input to the transactions
 
-To run all tests, simply do:
+---
 
-```sh
-aiken check
-```
+## To Do 
 
-To run only tests matching the string `foo`, do:
+How many albums should we enable as standard?
 
-```sh
-aiken check -m foo
-```
+How should we allow to mint more albums?
 
-## Documentation
-
-If you're writing a library, you might want to generate an HTML documentation for it.
-
-Use:
-
-```sh
-aiken docs
-```
-
-## Resources
-
-Find more on the [Aiken's user manual](https://aiken-lang.org).
+What fees do we charge and where are those payments verified?
