@@ -4,6 +4,20 @@ SoundRig CIP68 Album Contracts
 
 ---
 
+## Contract Structure
+
+Album Minting Policy - Mints the AlbumNFT (sends to Album Validator) and the Fractionalised UserTokens ( sends to Distribution Validator ) 
+
+Album Validator - Locks the AlbumNFT ( only updatable by the owner through soundrig )
+
+Distribution Validator - Locks the UserTokens ready to be purchased ( one at a time )
+
+Reference Minting Validator - Mints the token that identifies the reference data for the Album Minting Policy
+
+Reference Validator - Mints a token and attaches a datum for the Album Minting Policy to use as a reference input
+
+---
+
 ## Draft State
 
 this is the initial state of the SoundRig Contracts
